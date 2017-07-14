@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour {
     bool isLooking;
     //player health and ammo
     public float health = 100f;
+    public float currentHealth;
     public float bulletsCost;
 
     //Shooting
@@ -30,6 +31,7 @@ public class PlayerController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         cC = GetComponent<CharacterController>();
+        currentHealth = health;
 	}
 	
 	// Update is called once per frame
@@ -54,7 +56,7 @@ public class PlayerController : MonoBehaviour {
                 shotcounter = timeBetweenShots;
                 var bullet = Instantiate(bulletPrefab, firePoint.transform.position, firePoint.transform.rotation);
                 bullet.GetComponent<Rigidbody>().AddForce(transform.right * bulletSpeed, ForceMode.Impulse);
-                health = health - bulletsCost;
+                currentHealth = currentHealth - bulletsCost;
                 Destroy(bullet, 5);
             }
         }
