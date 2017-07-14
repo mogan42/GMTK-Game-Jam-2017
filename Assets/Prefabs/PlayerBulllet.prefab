@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 33647100001213084}
   - component: {fileID: 65342018520974108}
   - component: {fileID: 23931477708496346}
-  - component: {fileID: 114573498065148930}
   - component: {fileID: 54645305233447252}
   m_Layer: 0
   m_Name: PlayerBulllet
@@ -110,15 +109,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114573498065148930
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1063396043069744}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff049afd42192dd4596def13203e598c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthToGive: 10
