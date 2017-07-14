@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Morgans.unity
+- path: Assets/Scenes/Shak.unity
   isLoaded: 1
   isActive: 1
