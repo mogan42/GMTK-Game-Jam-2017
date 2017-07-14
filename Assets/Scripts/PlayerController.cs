@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour {
 
     void PlayerMoveDirection()
     {
-        moveDirection = new Vector3(Input.GetAxisRaw("Vertical"), 0f,-Input.GetAxisRaw("Horizontal"));
+        moveDirection = new Vector3(-Input.GetAxisRaw("Horizontal"), 0f,-Input.GetAxisRaw("Vertical"));
         
     }
 

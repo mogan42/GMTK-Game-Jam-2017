@@ -97,6 +97,7 @@
 -define:ENABLE_NATIVE_ARRAY_CHECKS
 -define:UNITY_TEAM_LICENSE
 -define:ENABLE_VSTU
+Assets/Scripts/BackgroundScrolling.cs
 Assets/Scripts/PlayerController.cs
 -r:"F:\Program Files\Unity2017\Editor\Data\Mono\lib\mono\unity\System.Runtime.Serialization.dll"
 -r:"F:\Program Files\Unity2017\Editor\Data\Mono\lib\mono\unity\System.Xml.Linq.dll"
