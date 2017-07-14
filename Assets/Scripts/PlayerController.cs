@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
-
+    //movment
     CharacterController cC;
 
     Vector3 moveDirection;
@@ -12,12 +12,19 @@ public class PlayerController : MonoBehaviour {
     public float playerSpeed;
     public float turnSpeed;
 
-
     bool isMoving;
     bool isLooking;
+    //player health and ammo
+    public float health = 100f;
+    public float bulletsCost;
 
-    //Quaternion lookDirection;
-    //Quaternion curentLookDirection;
+    //Shooting
+    bool shoot;
+    float shotcounter;
+    public float timeBetweenShots;
+    public float bulletSpeed;
+    public GameObject firePoint;
+    public GameObject bulletPrefab;
 
 
 	// Use this for initialization
@@ -29,10 +36,32 @@ public class PlayerController : MonoBehaviour {
 	void Update () {
 
         PlayerMoveDirection();
-        //curentLookDirection = Quaternion.LookRotation(moveDirection);
-        //lookDirection = Quaternion.RotateTowards(curentLookDirection, lookDirection, Time.deltaTime * turnSpeed);
-        
         cC.SimpleMove(moveDirection * playerSpeed);
+        if (Input.GetButton("Fire1"))
+        {
+            shoot = true;
+        }
+        else
+        {
+            shoot = false;
+        }
+
+        if (shoot)
+        {
+            shotcounter -= Time.deltaTime;
+            if (shotcounter <= 0)
+            {
+                shotcounter = timeBetweenShots;
+                var bullet = Instantiate(bulletPrefab, firePoint.transform.position, firePoint.transform.rotation);
+                bullet.GetComponent<Rigidbody>().AddForce(transform.right * bulletSpeed, ForceMode.Impulse);
+                health = health - bulletsCost;
+                Destroy(bullet, 5);
+            }
+        }
+        else
+        {
+            shotcounter = 0;
+        }
 
 	}
 
