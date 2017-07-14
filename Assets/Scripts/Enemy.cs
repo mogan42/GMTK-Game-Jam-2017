@@ -26,7 +26,7 @@ public class Enemy : MonoBehaviour {
 	void FixedUpdate () {
         float newManeuver = Mathf.MoveTowards(rb.velocity.x, targetManover, Time.deltaTime * smothing);
         rb.velocity = new Vector3(newManeuver, 0.0f, currentSpeed);
-        rb.position = new Vector3
+        //rb.position = new Vector3
 	}
     IEnumerator Evade()
     {
