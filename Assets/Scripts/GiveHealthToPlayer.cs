@@ -21,6 +21,7 @@ public class GiveHealthToPlayer : MonoBehaviour {
         if (other.gameObject.tag == "Player")
         {
             cHealth = other.GetComponent<PlayerController>();
+            cHealth.gotEnergy = true;
             cHealth.currentHealth = cHealth.currentHealth + healthToGive;
             Destroy(gameObject);
             
