@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour {
 
-    public GameObject enemys;
+    public GameObject[] enemys;
     public Vector3 enemySpawnLocations;
     public int noOfEnemies;
     public float spawnWait;
@@ -26,9 +26,10 @@ public class EnemySpawner : MonoBehaviour {
         while (true) {
             for (int i = 0; i < noOfEnemies; i++)
             {
+                GameObject enemy = enemys[Random.Range(0, enemys.Length)];
                 Vector3 spawnPosition = new Vector3(Random.Range(-enemySpawnLocations.x, enemySpawnLocations.x), enemySpawnLocations.z, enemySpawnLocations.z);
                 Quaternion spawnRotation = Quaternion.identity;
-                Instantiate(enemys, spawnPosition, spawnRotation);
+                Instantiate(enemy, spawnPosition, spawnRotation);
                 yield return new WaitForSeconds(spawnWait);
             }
             yield return new WaitForSeconds(waveWait);
