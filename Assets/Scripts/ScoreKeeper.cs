@@ -11,14 +11,26 @@ public class ScoreKeeper : MonoBehaviour {
     private Text text;
     public GameObject displayText;
 
+    private PlayerController player;
+    public GameObject deathStuff;
+
 
 	// Use this for initialization
 	void Start () {
+        player = GameObject.Find("Character/Bike").GetComponent<PlayerController>();
         text = displayText.GetComponent<Text>();
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
         text.text = writenText + score;
+
+        if (player.currentHealth <= 0)
+        {
+            player.notDead = false;
+            //Time.timeScale = 0.2f;
+            deathStuff.SetActive(true);
+        }
 	}
 }
