@@ -27,6 +27,8 @@ public class Enemy : MonoBehaviour {
     public float health = 100f;
     private ScoreKeeper score;
     public float scoreToGive;
+    public Renderer[] rend;
+    public GameObject explosion;
 
 	// Use this for initialization
 	void Start () {
@@ -41,7 +43,10 @@ public class Enemy : MonoBehaviour {
         if (health <= 0f)
         {
             score.score = score.score + scoreToGive;
-            Destroy(gameObject);
+            rend[0].enabled = false;
+            rend[1].enabled = false;
+            explosion.SetActive(true);
+            Destroy(gameObject, 3f);
         }
     }
 
