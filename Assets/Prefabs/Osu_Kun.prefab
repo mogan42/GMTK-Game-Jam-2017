@@ -257,14 +257,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  goodbullets: {fileID: 1063396043069744, guid: 7c61ce0cf3e46404fb162b4b71fff3df,
-    type: 2}
-  badBullets: {fileID: 1086109213226740, guid: 827874d2a3432874bb1383198fe77123, type: 2}
+  pickBullets:
+  - {fileID: 1063396043069744, guid: 7c61ce0cf3e46404fb162b4b71fff3df, type: 2}
+  - {fileID: 1086109213226740, guid: 827874d2a3432874bb1383198fe77123, type: 2}
   firePoint: {fileID: 4333901331769896}
   bulletSpeed: 10
   timeBetweenShots: 1
   bulletLifeTime: 100
-  bChangeWait: {x: 0, y: 0}
+  bChangeWait: {x: 0, y: 5}
 --- !u!114 &114512438416818666
 MonoBehaviour:
   m_ObjectHideFlags: 1

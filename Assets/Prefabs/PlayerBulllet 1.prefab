@@ -22,11 +22,11 @@ GameObject:
   - component: {fileID: 33321860379061716}
   - component: {fileID: 65510502106236000}
   - component: {fileID: 23642837474115998}
-  - component: {fileID: 114948238161018934}
   - component: {fileID: 54403287036693782}
+  - component: {fileID: 114352442604716168}
   m_Layer: 0
   m_Name: PlayerBulllet 1
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -170,7 +170,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.0191536, y: 1, z: 1}
   m_Center: {x: 0.6248188, y: 0, z: 0}
---- !u!114 &114948238161018934
+--- !u!114 &114352442604716168
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -178,10 +178,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1095037690356730}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff049afd42192dd4596def13203e598c, type: 3}
+  m_Script: {fileID: 11500000, guid: b8800a1bf2487b14c9e08f6bc376345b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthToGive: 10
+  healthToTake: 5
 --- !u!198 &198935267284827900
 ParticleSystem:
   m_ObjectHideFlags: 1
