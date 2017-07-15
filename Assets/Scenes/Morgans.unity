@@ -908,6 +908,81 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!4 &794544493 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4139876033835968, guid: 87c1221e43924a54e8f0fd9d68833408,
+    type: 2}
+  m_PrefabInternal: {fileID: 866832287}
+--- !u!1001 &866832287
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1202718088}
+    m_Modifications:
+    - target: {fileID: 4139876033835968, guid: 87c1221e43924a54e8f0fd9d68833408, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4139876033835968, guid: 87c1221e43924a54e8f0fd9d68833408, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -0.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 4139876033835968, guid: 87c1221e43924a54e8f0fd9d68833408, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4139876033835968, guid: 87c1221e43924a54e8f0fd9d68833408, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4139876033835968, guid: 87c1221e43924a54e8f0fd9d68833408, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4139876033835968, guid: 87c1221e43924a54e8f0fd9d68833408, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4139876033835968, guid: 87c1221e43924a54e8f0fd9d68833408, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4139876033835968, guid: 87c1221e43924a54e8f0fd9d68833408, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4139876033835968, guid: 87c1221e43924a54e8f0fd9d68833408, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4139876033835968, guid: 87c1221e43924a54e8f0fd9d68833408, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.28571433
+      objectReference: {fileID: 0}
+    - target: {fileID: 4204284779701106, guid: 87c1221e43924a54e8f0fd9d68833408, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4204284779701106, guid: 87c1221e43924a54e8f0fd9d68833408, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4204284779701106, guid: 87c1221e43924a54e8f0fd9d68833408, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4238564096702454, guid: 87c1221e43924a54e8f0fd9d68833408, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1265592316801754, guid: 87c1221e43924a54e8f0fd9d68833408, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 87c1221e43924a54e8f0fd9d68833408, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &878008731
 GameObject:
   m_ObjectHideFlags: 0
@@ -1117,7 +1192,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 904951847}
   m_LocalRotation: {x: 0.5, y: 0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: 0, y: 0, z: -0.17}
+  m_LocalPosition: {x: 0, y: 0, z: 0.022}
   m_LocalScale: {x: 0.01889646, y: 0.005398987, z: 0.018896453}
   m_Children:
   - {fileID: 1842847960}
@@ -1488,6 +1563,7 @@ Transform:
   - {fileID: 904951851}
   - {fileID: 2016631870}
   - {fileID: 1079047820}
+  - {fileID: 794544493}
   m_Father: {fileID: 1518754998}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3087,6 +3163,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemys: {fileID: 1795346568429692, guid: 2540eec1802245745b56c7e7c0827201, type: 2}
   enemySpawnLocations: {x: 13, y: -3, z: -1}
+  noOfEnemies: 5
+  spawnWait: 0.5
+  startWait: 1
+  waveWait: 5
 --- !u!4 &1899671777
 Transform:
   m_ObjectHideFlags: 0
