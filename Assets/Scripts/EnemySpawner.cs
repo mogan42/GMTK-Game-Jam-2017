@@ -23,7 +23,7 @@ public class EnemySpawner : MonoBehaviour {
         if (timer >= timerTarget)
         {
             noOfEnemies++;
-            Debug.Log("Game is harder");
+            //Debug.Log("Game is harder");
             timer = 0;
         }
 	}
