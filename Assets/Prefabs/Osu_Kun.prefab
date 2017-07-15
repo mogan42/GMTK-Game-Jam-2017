@@ -194,7 +194,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1795346568429692}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.7707376, y: -2.5448307e-17, z: 10.330017}
+  m_LocalPosition: {x: -0.090814024, y: -2.6681442e-17, z: 10.8751545}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4502720974248012}
@@ -387,6 +387,7 @@ MonoBehaviour:
   timeBetweenShots: 1
   bulletLifeTime: 100
   bChangeWait: {x: 0, y: 5}
+  enemyShoot: 1
 --- !u!114 &114512438416818666
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -410,7 +411,7 @@ MonoBehaviour:
     zMin: -20
     zMax: 50
   health: 100
-  scoreToGive: 100
+  scoreToGive: 50
   rend:
   - {fileID: 23194523520938100}
   - {fileID: 23715401690378974}
@@ -487,7 +488,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 556962373
+  randomSeed: -1134178814
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3760,7 +3761,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1229446855
+  randomSeed: -1127356789
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -7039,7 +7040,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1351100207
+  randomSeed: -2054443780
   InitialModule:
     serializedVersion: 3
     enabled: 1

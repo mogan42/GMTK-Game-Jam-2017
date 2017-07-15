@@ -28,6 +28,8 @@ public class ScoreKeeper : MonoBehaviour {
 
         if (player.currentHealth <= 0)
         {
+            player.shoot = false;
+            player.screenClear = false;
             player.notDead = false;
             //Time.timeScale = 0.2f;
             deathStuff.SetActive(true);

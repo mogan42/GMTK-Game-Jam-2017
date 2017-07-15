@@ -21,14 +21,14 @@ public class PlayerController : MonoBehaviour {
     public float screenClearBulletsCost;
 
     //Shooting
-    bool shoot;
+    public bool shoot;
     float shotcounter;
     public float timeBetweenShots;
     public float bulletSpeed;
     public GameObject firePoint;
     public GameObject bulletPrefab;
     //Shooting2
-    bool screenClear;
+    public bool screenClear;
     float shotcounter2;
     public float timeBetweenShots2;
     public float bulletSpeed2;
