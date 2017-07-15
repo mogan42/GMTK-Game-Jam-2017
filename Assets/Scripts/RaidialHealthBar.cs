@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class RaidialHealthBar : MonoBehaviour {
     Image fillImg;
     private PlayerController pController;
-    public float healthTimeMultiplier;
 	// Use this for initialization
 	void Start () {
         fillImg = this.GetComponent<Image>();
@@ -18,7 +17,7 @@ public class RaidialHealthBar : MonoBehaviour {
 	void Update () {
         if (pController.currentHealth > 0)
         {
-            pController.currentHealth -= Time.deltaTime * healthTimeMultiplier;
+            pController.currentHealth -= Time.deltaTime * 10f;
             fillImg.fillAmount = pController.currentHealth / pController.health;
         }
 	}
