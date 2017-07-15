@@ -10,6 +10,8 @@ public class EnemySpawner : MonoBehaviour {
     public float spawnWait;
     public float startWait;
     public float waveWait;
+    private float timer;
+    public float timerTarget;
 	// Use this for initialization
 	void Start () {
         StartCoroutine(SpawnWave());
@@ -17,7 +19,13 @@ public class EnemySpawner : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+        timer += Time.deltaTime;
+        if (timer >= timerTarget)
+        {
+            noOfEnemies++;
+            Debug.Log("Game is harder");
+            timer = 0;
+        }
 	}
 
     IEnumerator SpawnWave()

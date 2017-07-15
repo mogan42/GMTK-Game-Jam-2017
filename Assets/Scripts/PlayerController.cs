@@ -15,9 +15,10 @@ public class PlayerController : MonoBehaviour {
     bool isMoving;
     bool isLooking;
     //player health and ammo
-    public float health = 100f;
+    public float health;
     public float currentHealth;
     public float bulletsCost;
+    public float screenClearBulletsCost;
 
     //Shooting
     bool shoot;
@@ -26,10 +27,15 @@ public class PlayerController : MonoBehaviour {
     public float bulletSpeed;
     public GameObject firePoint;
     public GameObject bulletPrefab;
+    //Shooting2
+    bool screenClear;
+    float shotcounter2;
+    public float timeBetweenShots2;
+    public float bulletSpeed2;
+    public GameObject screenClearBulletPrefab;
 
-
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         cC = GetComponent<CharacterController>();
         currentHealth = health;
 	}
@@ -46,6 +52,19 @@ public class PlayerController : MonoBehaviour {
         else
         {
             shoot = false;
+        }
+        if (Input.GetButton("Fire2"))
+        {
+            screenClear = true;
+        }
+        else
+        {
+            screenClear = false;
+        }
+
+        if (currentHealth >= health)
+        {
+            currentHealth = health;
         }
 
         if (shoot)
@@ -64,8 +83,24 @@ public class PlayerController : MonoBehaviour {
         {
             shotcounter = 0;
         }
+        if (screenClear)
+        {
+            shotcounter2 -= Time.deltaTime;
+            if (shotcounter2 <= 0)
+            {
+                shotcounter2 = timeBetweenShots2;
+                var bullet = Instantiate(screenClearBulletPrefab, firePoint.transform.position, firePoint.transform.rotation);
+                bullet.GetComponent<Rigidbody>().AddForce(transform.right * bulletSpeed, ForceMode.Impulse);
+                currentHealth = currentHealth - screenClearBulletsCost;
+                Destroy(bullet, 5);
+            }
+        }
+        else
+        {
+            shotcounter2 = 0;
+        }
 
-	}
+    }
 
     void PlayerMoveDirection()
     {
