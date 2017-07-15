@@ -36,7 +36,7 @@ public class Enemy : MonoBehaviour {
         float newManeuver = Mathf.MoveTowards(rb.velocity.x, targetManover, Time.deltaTime * smothing);
         rb.velocity = new Vector3(newManeuver, 0.0f, currentSpeed);
         rb.position = new Vector3
-            (Mathf.Clamp(rb.position.x, bounds.xMin, bounds.xMax), -4.36f, Mathf.Clamp(rb.position.z, bounds.zMin, bounds.zMax));
+            (Mathf.Clamp(rb.position.x, bounds.xMin, bounds.xMax), -4.3f, Mathf.Clamp(rb.position.z, bounds.zMin, bounds.zMax));
         rb.rotation = Quaternion.Euler(0.0f, 0.0f, rb.velocity.x * -tilt);
 	}
     IEnumerator Evade()
