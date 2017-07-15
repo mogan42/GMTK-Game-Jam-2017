@@ -8,8 +8,16 @@ public class DamageEnemys : MonoBehaviour {
     private Enemy cHealth;
     public bool isScreenClear;
     private float lifeTime = 200f;
-	// Use this for initialization
-	void Start () {
+    private AudioSource aSource;
+    public Vector2 pitchRange;
+    // Use this for initialization
+    private void Awake()
+    {
+        aSource = GetComponent<AudioSource>();
+        aSource.pitch = Random.Range(pitchRange.x, pitchRange.y);
+    }
+
+    void Start () {
         if (isScreenClear == true)
         {
         Destroy(gameObject, lifeTime);
@@ -28,6 +36,7 @@ public class DamageEnemys : MonoBehaviour {
         {
             cHealth = other.GetComponent<Enemy>();
             cHealth.health = cHealth.health - healthToTake;
+            cHealth.beenHit = true;
             if (!isScreenClear)
             {
             Destroy(gameObject);

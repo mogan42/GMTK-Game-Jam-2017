@@ -9,7 +9,7 @@ public class BasicEnemyMovment : MonoBehaviour{
     public GameObject[] pickBullets;
 
     private GameObject bulletPrefab;
-    public Transform firePoint;
+    public Transform[] firePoints;
 
     public float bulletSpeed;
     private float shotcounter;
@@ -22,12 +22,14 @@ public class BasicEnemyMovment : MonoBehaviour{
 
     public bool enemyShoot = true;
 
+
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
         rb.velocity = transform.forward * speed;
         bulletPrefab = pickBullets[Random.Range (0,pickBullets.Length)];
         StartCoroutine(ChangeAmmo());
+
     }
 
     void Update()
@@ -40,14 +42,18 @@ public class BasicEnemyMovment : MonoBehaviour{
     {
         if (enemyShoot)
         {
-            shotcounter -= Time.deltaTime;
-            if (shotcounter <= 0)
+            foreach (Transform firePoint in firePoints)
             {
-                shotcounter = timeBetweenShots;
-                var bullet = Instantiate(bulletPrefab, firePoint.transform.position, firePoint.transform.rotation);
-                bullet.GetComponent<Rigidbody>().AddForce(transform.forward * bulletSpeed, ForceMode.Impulse);
-                Destroy(bullet, 5);
+                    shotcounter -= Time.deltaTime;
+                if (shotcounter <= 0)
+                {
+                    shotcounter = timeBetweenShots;
+                    var bullet = Instantiate(bulletPrefab, firePoint.transform.position, firePoint.transform.rotation);
+                    bullet.GetComponent<Rigidbody>().AddForce(transform.forward * bulletSpeed, ForceMode.Impulse);
+                    Destroy(bullet, 5);
+                }
             }
+
         }
         else
         {

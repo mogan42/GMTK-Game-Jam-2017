@@ -135,6 +135,7 @@
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\RaidialHealthBar.cs" />
     <Compile Include="Assets\Scripts\ScoreKeeper.cs" />
+    <Compile Include="Assets\Scripts\TopBoundry.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\PostProcessing\Editor Resources\Monitors\HistogramCompute.compute" />

@@ -89,8 +89,8 @@ GameObject:
   - component: {fileID: 54783487902055524}
   - component: {fileID: 136939814226411540}
   - component: {fileID: 114512438416818666}
-  - component: {fileID: 114465493412788506}
   - component: {fileID: 82126244985216108}
+  - component: {fileID: 114955933161414110}
   m_Layer: 0
   m_Name: Osu_Kun
   m_TagString: Enemy
@@ -106,6 +106,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4502720974248012}
+  - component: {fileID: 82639770838169598}
   m_Layer: 0
   m_Name: Explosion
   m_TagString: Untagged
@@ -195,7 +196,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1795346568429692}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.090814024, y: -2.6681442e-17, z: 10.8751545}
+  m_LocalPosition: {x: 1.684556, y: -2.22489e-17, z: 8.915645}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4502720974248012}
@@ -418,7 +419,87 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+--- !u!82 &82639770838169598
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1806220264464706}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
     m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -448,27 +529,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114465493412788506
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1795346568429692}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 398ecf1d5fdd52644b40ba61797b6e9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 3
-  pickBullets:
-  - {fileID: 1063396043069744, guid: 7c61ce0cf3e46404fb162b4b71fff3df, type: 2}
-  - {fileID: 1086109213226740, guid: 827874d2a3432874bb1383198fe77123, type: 2}
-  firePoint: {fileID: 4333901331769896}
-  bulletSpeed: 10
-  timeBetweenShots: 1
-  bulletLifeTime: 100
-  bChangeWait: {x: 0, y: 5}
-  enemyShoot: 1
 --- !u!114 &114512438416818666
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -493,11 +553,43 @@ MonoBehaviour:
     zMax: 50
   health: 100
   scoreToGive: 500
-  rend:
-  - {fileID: 23194523520938100}
-  - {fileID: 23715401690378974}
+  disable:
+  - {fileID: 1662982048278122}
+  - {fileID: 1978146079342498}
   explosion: {fileID: 1542380955701502}
+  beenHit: 0
+  aSource2: {fileID: 82639770838169598}
   explosionSound: {fileID: 8300000, guid: 769afbafc61a8b147bed4f9107e9ce79, type: 3}
+  hitSound: {fileID: 8300000, guid: c1ea539ba44cf7f4183f9dca3211c3bf, type: 3}
+  isOsu: 1
+  osuYPoss: -4.3
+  iskyun: 0
+  kyunsYPoss: 2.51
+--- !u!114 &114955933161414110
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1795346568429692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 398ecf1d5fdd52644b40ba61797b6e9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  pickBullets:
+  - {fileID: 1086109213226740, guid: 827874d2a3432874bb1383198fe77123, type: 2}
+  - {fileID: 1086109213226740, guid: 827874d2a3432874bb1383198fe77123, type: 2}
+  - {fileID: 1086109213226740, guid: 827874d2a3432874bb1383198fe77123, type: 2}
+  - {fileID: 1063396043069744, guid: 7c61ce0cf3e46404fb162b4b71fff3df, type: 2}
+  - {fileID: 1063396043069744, guid: 7c61ce0cf3e46404fb162b4b71fff3df, type: 2}
+  firePoints:
+  - {fileID: 4333901331769896}
+  bulletSpeed: 10
+  timeBetweenShots: 1
+  bulletLifeTime: 100
+  bChangeWait: {x: 0, y: 5}
+  enemyShoot: 1
 --- !u!136 &136939814226411540
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -570,7 +662,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1134178814
+  randomSeed: -763776460
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3843,7 +3935,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1127356789
+  randomSeed: 685037877
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -7122,7 +7214,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -2054443780
+  randomSeed: 1580087838
   InitialModule:
     serializedVersion: 3
     enabled: 1
