@@ -24,15 +24,25 @@ public class Enemy : MonoBehaviour {
     private Rigidbody rb;
     public Boundary bounds;
 
+    public float health = 100f;
+
 	// Use this for initialization
 	void Start () {
         rb = GetComponent<Rigidbody>();
         currentSpeed = rb.velocity.z;
         StartCoroutine(Evade());
 	}
-	
-	// Update is called once per frame
-	void FixedUpdate () {
+
+    void Update()
+    {
+        if (health <= 0f)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    // Update is called once per frame
+    void FixedUpdate () {
         float newManeuver = Mathf.MoveTowards(rb.velocity.x, targetManover, Time.deltaTime * smothing);
         rb.velocity = new Vector3(newManeuver, 0.0f, currentSpeed);
         rb.position = new Vector3

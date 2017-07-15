@@ -6,8 +6,7 @@ public class BasicEnemyMovment : MonoBehaviour{
 
     public float speed;
 
-    public GameObject goodbullets;
-    public GameObject badBullets;
+    public GameObject[] pickBullets;
 
     private GameObject bulletPrefab;
     public Transform firePoint;
@@ -25,12 +24,13 @@ public class BasicEnemyMovment : MonoBehaviour{
     {
         rb = GetComponent<Rigidbody>();
         rb.velocity = transform.forward * speed;
-        bulletPrefab = goodbullets;
-        //StartCoroutine(ChangeAmmo());
+        bulletPrefab = pickBullets[Random.Range (0,pickBullets.Length)];
+        StartCoroutine(ChangeAmmo());
     }
 
     void Update()
     {
+
         Fire();
     }
 
@@ -51,8 +51,10 @@ public class BasicEnemyMovment : MonoBehaviour{
         yield return new WaitForSeconds(Random.Range(bChangeWait.x, bChangeWait.y));
         while (true)
         {
-
+            bulletPrefab = pickBullets[Random.Range(0, pickBullets.Length)];
+            yield return new WaitForSeconds(Random.Range (bChangeWait.x, bChangeWait.y));
         }
+        
 
     }
 

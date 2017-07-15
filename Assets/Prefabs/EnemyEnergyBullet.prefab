@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 54645305233447252}
   m_Layer: 0
   m_Name: EnemyEnergyBullet
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -181,7 +181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff049afd42192dd4596def13203e598c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthToGive: 10
+  healthToGive: 50
 --- !u!198 &198409347275711506
 ParticleSystem:
   m_ObjectHideFlags: 1
