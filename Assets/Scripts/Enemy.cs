@@ -2,6 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class Boundary
+{
+    public float xMin, xMax, zMin, zMax;
+}
+
+
 public class Enemy : MonoBehaviour {
 
     public Vector2 startwait;
@@ -12,8 +19,10 @@ public class Enemy : MonoBehaviour {
     public float doge;
     public float smothing;
     private float currentSpeed;
+    public float tilt;
 
     private Rigidbody rb;
+    public Boundary bounds;
 
 	// Use this for initialization
 	void Start () {
@@ -26,7 +35,9 @@ public class Enemy : MonoBehaviour {
 	void FixedUpdate () {
         float newManeuver = Mathf.MoveTowards(rb.velocity.x, targetManover, Time.deltaTime * smothing);
         rb.velocity = new Vector3(newManeuver, 0.0f, currentSpeed);
-        //rb.position = new Vector3
+        rb.position = new Vector3
+            (Mathf.Clamp(rb.position.x, bounds.xMin, bounds.xMax), 0.0f, Mathf.Clamp(rb.position.z, bounds.zMin, bounds.zMax));
+        rb.rotation = Quaternion.Euler(0.0f, 0.0f, rb.velocity.x * -tilt);
 	}
     IEnumerator Evade()
     {
