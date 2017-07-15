@@ -11,6 +11,21 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1795346568429692}
   m_IsPrefabParent: 1
+--- !u!1 &1532570478903092
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4333901331769896}
+  m_Layer: 0
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1662982048278122
 GameObject:
   m_ObjectHideFlags: 0
@@ -40,6 +55,7 @@ GameObject:
   - component: {fileID: 54783487902055524}
   - component: {fileID: 136939814226411540}
   - component: {fileID: 114512438416818666}
+  - component: {fileID: 114465493412788506}
   m_Layer: 0
   m_Name: Osu_Kun
   m_TagString: Enemy
@@ -64,6 +80,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &4333901331769896
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1532570478903092}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.01, y: 5.314, z: 1.017}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4494189380433900}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4494189380433900
 Transform:
   m_ObjectHideFlags: 1
@@ -71,11 +100,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1795346568429692}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.32134458, y: -4.36, z: 10.91}
+  m_LocalPosition: {x: -0.32134458, y: -4.36, z: -28}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4500611549153136}
   - {fileID: 4687555095943404}
+  - {fileID: 4333901331769896}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -193,10 +223,10 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!95 &95620023504434062
 Animator:
@@ -215,6 +245,26 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114465493412788506
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1795346568429692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 398ecf1d5fdd52644b40ba61797b6e9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  goodbullets: {fileID: 1063396043069744, guid: 7c61ce0cf3e46404fb162b4b71fff3df,
+    type: 2}
+  badBullets: {fileID: 1086109213226740, guid: 827874d2a3432874bb1383198fe77123, type: 2}
+  firePoint: {fileID: 4333901331769896}
+  bulletSpeed: 10
+  timeBetweenShots: 1
+  bulletLifeTime: 100
+  bChangeWait: {x: 0, y: 0}
 --- !u!114 &114512438416818666
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -233,10 +283,10 @@ MonoBehaviour:
   smothing: 7.5
   tilt: 1
   bounds:
-    xMin: -20
-    xMax: 20
-    zMin: -20
-    zMax: 20
+    xMin: -13
+    xMax: 13
+    zMin: -40
+    zMax: 40
 --- !u!136 &136939814226411540
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -247,6 +297,6 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.9216771
-  m_Height: 2.6951962
+  m_Height: 1.8433542
   m_Direction: 1
-  m_Center: {x: 0.04120636, y: 4.861087, z: 0.0030088425}
+  m_Center: {x: 0.04120636, y: 5.287008, z: 0.0030088425}
