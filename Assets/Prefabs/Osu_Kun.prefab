@@ -287,6 +287,8 @@ MonoBehaviour:
     xMax: 13
     zMin: -20
     zMax: 50
+  health: 100
+  scoreToGive: 100
 --- !u!136 &136939814226411540
 CapsuleCollider:
   m_ObjectHideFlags: 1

@@ -25,11 +25,14 @@ public class Enemy : MonoBehaviour {
     public Boundary bounds;
 
     public float health = 100f;
+    private ScoreKeeper score;
+    public float scoreToGive;
 
 	// Use this for initialization
 	void Start () {
         rb = GetComponent<Rigidbody>();
         currentSpeed = rb.velocity.z;
+        score = GameObject.Find("GameController").GetComponent<ScoreKeeper>();
         StartCoroutine(Evade());
 	}
 
@@ -37,6 +40,7 @@ public class Enemy : MonoBehaviour {
     {
         if (health <= 0f)
         {
+            score.score = score.score + scoreToGive;
             Destroy(gameObject);
         }
     }

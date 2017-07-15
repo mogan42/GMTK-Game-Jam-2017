@@ -15,7 +15,11 @@ public class DestroyOnHit : MonoBehaviour {
 	}
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Enemy" || other.gameObject.tag == "Bullet")
+        if (other.gameObject.tag == "Enemy")
+        {
+            Destroy(other.gameObject);
+        }
+        if (other.gameObject.tag == "Bullet")
         {
             Destroy(other.gameObject);
         }
