@@ -22,6 +22,7 @@ public class DamagePlayer : MonoBehaviour {
         {
             cHealth = other.GetComponent<PlayerController>();
             cHealth.currentHealth = cHealth.currentHealth - healthToTake;
+            cHealth.beenhit = true;
             Destroy(gameObject);
             
         }

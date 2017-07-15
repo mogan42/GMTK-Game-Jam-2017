@@ -31,6 +31,7 @@ public class ScoreKeeper : MonoBehaviour {
             player.shoot = false;
             player.screenClear = false;
             player.notDead = false;
+            player.dead = true;
             //Time.timeScale = 0.2f;
             deathStuff.SetActive(true);
         }

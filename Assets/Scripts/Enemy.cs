@@ -31,6 +31,9 @@ public class Enemy : MonoBehaviour {
     public GameObject explosion;
     private BasicEnemyMovment enemy;
     private Collider col;
+    private bool deadAlready = false;
+    private AudioSource aSource;
+    public AudioClip explosionSound;
 
 	// Use this for initialization
 	void Start () {
@@ -39,6 +42,7 @@ public class Enemy : MonoBehaviour {
         score = GameObject.Find("GameController").GetComponent<ScoreKeeper>();
         enemy = GetComponent<BasicEnemyMovment>();
         col = GetComponent<Collider>();
+        aSource = GetComponent<AudioSource>();
         StartCoroutine(Evade());
 	}
 
@@ -51,12 +55,18 @@ public class Enemy : MonoBehaviour {
 
         if (health <= 0f)
         {
-            score.score = score.score + scoreToGive;
-            enemy.enemyShoot = false;
-            rend[0].enabled = false;
-            rend[1].enabled = false;
-            explosion.SetActive(true);
-            col.isTrigger = true;
+            if (!deadAlready)
+            {
+                score.score = score.score + scoreToGive;
+                enemy.enemyShoot = false;
+                rend[0].enabled = false;
+                rend[1].enabled = false;
+                explosion.SetActive(true);
+                col.isTrigger = true;
+                aSource.PlayOneShot(explosionSound, 0.3f);
+                deadAlready = true;
+            }
+
             Destroy(gameObject, 2f);
         }
 

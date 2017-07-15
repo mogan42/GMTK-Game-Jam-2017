@@ -38,10 +38,18 @@ public class PlayerController : MonoBehaviour {
     private AudioSource aSource;
     public AudioClip getEnergy;
     public AudioClip explode;
+    public AudioClip hitSound;
+    public bool dead = false;
+    public bool deadalready = false;
+    public bool gotEnergy = false;
+    public bool beenhit = false;
+    public GameObject[] dissable;
+    public GameObject explosion;
 
     // Use this for initialization
     void Start () {
         cC = GetComponent<CharacterController>();
+        aSource = GetComponent<AudioSource>();
         currentHealth = health;
 	}
 	
@@ -74,6 +82,33 @@ public class PlayerController : MonoBehaviour {
                 {
                 currentHealth = health;
                 }
+
+        }
+
+        if (gotEnergy)
+        {
+            aSource.PlayOneShot(getEnergy, 0.3f);
+            gotEnergy = false;
+        }
+        if (beenhit)
+        {
+            aSource.PlayOneShot(hitSound, 1f);
+            beenhit = false;
+        }
+
+        if (dead)
+        {
+            if (!deadalready)
+            {
+            aSource.PlayOneShot(explode, 0.3f);
+                explosion.SetActive(true);
+                foreach (GameObject rend in dissable)
+                {
+                    rend.SetActive(false);
+                }
+            dead = false;
+            deadalready = true; 
+            }
 
         }
    
@@ -116,11 +151,6 @@ public class PlayerController : MonoBehaviour {
     void PlayerMoveDirection()
     {
         moveDirection = new Vector3(-Input.GetAxisRaw("Horizontal"), 0f,-Input.GetAxisRaw("Vertical"));
-        
-    }
-
-    void PlaySound()
-    {
         
     }
 
