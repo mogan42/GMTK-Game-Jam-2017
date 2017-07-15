@@ -1,0 +1,264 @@
+fileFormatVersion: 2
+guid: aa35321bcc982124aae3461d57ac93c6
+timeCreated: 1500091449
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: GattlingGun
+    100002: GattlingGun1
+    100004: //RootNode
+    100006: pCube2
+    100008: pCube2 1
+    100010: pCube3
+    100012: pCube3 1
+    100014: pCube4
+    100016: pCube5
+    100018: pCube6
+    100020: pCube7
+    100022: pCube8
+    100024: pCube9
+    100026: pCylinder3
+    100028: pCylinder3 1
+    100030: pPipe1
+    100032: pPipe1 1
+    100034: pPipe10
+    100036: pPipe10 1
+    100038: pPipe11
+    100040: pPipe12
+    100042: pPipe13
+    100044: pPipe2
+    100046: pPipe2 1
+    100048: pPipe3
+    100050: pPipe3 1
+    100052: pPipe4
+    100054: pPipe4 1
+    100056: pPipe5
+    100058: pPipe5 1
+    100060: pPipe6
+    100062: pPipe6 1
+    100064: pPipe7
+    100066: pPipe7 1
+    100068: pPipe8
+    100070: pPipe8 1
+    100072: pPipe9
+    100074: pPipe9 1
+    400000: GattlingGun
+    400002: GattlingGun1
+    400004: //RootNode
+    400006: pCube2
+    400008: pCube2 1
+    400010: pCube3
+    400012: pCube3 1
+    400014: pCube4
+    400016: pCube5
+    400018: pCube6
+    400020: pCube7
+    400022: pCube8
+    400024: pCube9
+    400026: pCylinder3
+    400028: pCylinder3 1
+    400030: pPipe1
+    400032: pPipe1 1
+    400034: pPipe10
+    400036: pPipe10 1
+    400038: pPipe11
+    400040: pPipe12
+    400042: pPipe13
+    400044: pPipe2
+    400046: pPipe2 1
+    400048: pPipe3
+    400050: pPipe3 1
+    400052: pPipe4
+    400054: pPipe4 1
+    400056: pPipe5
+    400058: pPipe5 1
+    400060: pPipe6
+    400062: pPipe6 1
+    400064: pPipe7
+    400066: pPipe7 1
+    400068: pPipe8
+    400070: pPipe8 1
+    400072: pPipe9
+    400074: pPipe9 1
+    2300000: pCube2
+    2300002: pCube2 1
+    2300004: pCube3
+    2300006: pCube3 1
+    2300008: pCube4
+    2300010: pCube5
+    2300012: pCube6
+    2300014: pCube7
+    2300016: pCube8
+    2300018: pCube9
+    2300020: pCylinder3
+    2300022: pCylinder3 1
+    2300024: pPipe1
+    2300026: pPipe1 1
+    2300028: pPipe10
+    2300030: pPipe10 1
+    2300032: pPipe11
+    2300034: pPipe12
+    2300036: pPipe13
+    2300038: pPipe2
+    2300040: pPipe2 1
+    2300042: pPipe3
+    2300044: pPipe3 1
+    2300046: pPipe4
+    2300048: pPipe4 1
+    2300050: pPipe5
+    2300052: pPipe5 1
+    2300054: pPipe6
+    2300056: pPipe6 1
+    2300058: pPipe7
+    2300060: pPipe7 1
+    2300062: pPipe8
+    2300064: pPipe8 1
+    2300066: pPipe9
+    2300068: pPipe9 1
+    3300000: pCube2
+    3300002: pCube2 1
+    3300004: pCube3
+    3300006: pCube3 1
+    3300008: pCube4
+    3300010: pCube5
+    3300012: pCube6
+    3300014: pCube7
+    3300016: pCube8
+    3300018: pCube9
+    3300020: pCylinder3
+    3300022: pCylinder3 1
+    3300024: pPipe1
+    3300026: pPipe1 1
+    3300028: pPipe10
+    3300030: pPipe10 1
+    3300032: pPipe11
+    3300034: pPipe12
+    3300036: pPipe13
+    3300038: pPipe2
+    3300040: pPipe2 1
+    3300042: pPipe3
+    3300044: pPipe3 1
+    3300046: pPipe4
+    3300048: pPipe4 1
+    3300050: pPipe5
+    3300052: pPipe5 1
+    3300054: pPipe6
+    3300056: pPipe6 1
+    3300058: pPipe7
+    3300060: pPipe7 1
+    3300062: pPipe8
+    3300064: pPipe8 1
+    3300066: pPipe9
+    3300068: pPipe9 1
+    4300000: pCube9
+    4300002: pCube8
+    4300004: pCube7
+    4300006: pPipe13
+    4300008: pCube6
+    4300010: pPipe12
+    4300012: pCube5
+    4300014: pPipe11
+    4300016: pCube4
+    4300018: pCylinder3
+    4300020: pCube3
+    4300022: pCube2
+    4300024: pPipe10
+    4300026: pPipe9
+    4300028: pPipe8
+    4300030: pPipe7
+    4300032: pPipe6
+    4300034: pPipe5
+    4300036: pPipe4
+    4300038: pPipe3
+    4300040: pPipe2
+    4300042: pPipe1
+    4300044: pCylinder3
+    4300046: pCube3
+    4300048: pCube2
+    4300050: pPipe10
+    4300052: pPipe9
+    4300054: pPipe8
+    4300056: pPipe7
+    4300058: pPipe6
+    4300060: pPipe5
+    4300062: pPipe4
+    4300064: pPipe3
+    4300066: pPipe2
+    4300068: pPipe1
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
