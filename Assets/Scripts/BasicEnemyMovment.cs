@@ -21,13 +21,19 @@ public class BasicEnemyMovment : MonoBehaviour{
 
     private Rigidbody rb;
 
-    void Start()
+    void Awake()
     {
         rb = GetComponent<Rigidbody>();
         rb.velocity = transform.forward * speed;
         bulletPrefab = goodbullets;
-        StartCoroutine(ChangeAmmo());
+        //StartCoroutine(ChangeAmmo());
     }
+
+    void Update()
+    {
+        Fire();
+    }
+
     void Fire()
     {
         shotcounter -= Time.deltaTime;
@@ -39,14 +45,14 @@ public class BasicEnemyMovment : MonoBehaviour{
             Destroy(bullet, 5);
         }
     }
-    void Update()
-    {
-        Fire();
-    }
 
     IEnumerator ChangeAmmo()
     {
         yield return new WaitForSeconds(Random.Range(bChangeWait.x, bChangeWait.y));
+        while (true)
+        {
+
+        }
 
     }
 
