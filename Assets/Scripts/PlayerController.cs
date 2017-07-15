@@ -34,6 +34,10 @@ public class PlayerController : MonoBehaviour {
     public float bulletSpeed2;
     public GameObject screenClearBulletPrefab;
     public bool notDead = true;
+    //audio
+    private AudioSource aSource;
+    public AudioClip getEnergy;
+    public AudioClip explode;
 
     // Use this for initialization
     void Start () {
@@ -112,6 +116,11 @@ public class PlayerController : MonoBehaviour {
     void PlayerMoveDirection()
     {
         moveDirection = new Vector3(-Input.GetAxisRaw("Horizontal"), 0f,-Input.GetAxisRaw("Vertical"));
+        
+    }
+
+    void PlaySound()
+    {
         
     }
 
