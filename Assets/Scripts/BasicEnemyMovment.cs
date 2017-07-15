@@ -20,6 +20,8 @@ public class BasicEnemyMovment : MonoBehaviour{
 
     private Rigidbody rb;
 
+    public bool enemyShoot = true;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -36,14 +38,22 @@ public class BasicEnemyMovment : MonoBehaviour{
 
     void Fire()
     {
-        shotcounter -= Time.deltaTime;
-        if (shotcounter <= 0)
+        if (enemyShoot)
         {
-            shotcounter = timeBetweenShots;
-            var bullet = Instantiate(bulletPrefab, firePoint.transform.position, firePoint.transform.rotation);
-            bullet.GetComponent<Rigidbody>().AddForce(transform.forward * bulletSpeed, ForceMode.Impulse);
-            Destroy(bullet, 5);
+            shotcounter -= Time.deltaTime;
+            if (shotcounter <= 0)
+            {
+                shotcounter = timeBetweenShots;
+                var bullet = Instantiate(bulletPrefab, firePoint.transform.position, firePoint.transform.rotation);
+                bullet.GetComponent<Rigidbody>().AddForce(transform.forward * bulletSpeed, ForceMode.Impulse);
+                Destroy(bullet, 5);
+            }
         }
+        else
+        {
+            shotcounter = 0;
+        }
+
     }
 
     IEnumerator ChangeAmmo()

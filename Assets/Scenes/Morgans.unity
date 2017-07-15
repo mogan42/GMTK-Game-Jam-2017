@@ -3893,11 +3893,13 @@ MonoBehaviour:
   currentHealth: 0
   bulletsCost: 1
   screenClearBulletsCost: 500
+  shoot: 0
   timeBetweenShots: 0.001
   bulletSpeed: 100
   firePoint: {fileID: 1079047819}
   bulletPrefab: {fileID: 1962995508182914, guid: 35f12998dfa3f934e991491315d25975,
     type: 2}
+  screenClear: 0
   timeBetweenShots2: 1
   bulletSpeed2: 5
   screenClearBulletPrefab: {fileID: 1221112173124148, guid: 3e77624bf2d7adf4aa58f9b6c011c980,
