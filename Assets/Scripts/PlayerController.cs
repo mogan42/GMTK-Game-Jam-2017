@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour {
     public float timeBetweenShots2;
     public float bulletSpeed2;
     public GameObject screenClearBulletPrefab;
+    public bool notDead = true;
 
     // Use this for initialization
     void Start () {
@@ -43,29 +44,35 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        PlayerMoveDirection();
-        cC.SimpleMove(moveDirection * playerSpeed);
-        if (Input.GetButton("Fire1"))
-        {
-            shoot = true;
-        }
-        else
-        {
-            shoot = false;
-        }
-        if (Input.GetButton("Fire2"))
-        {
-            screenClear = true;
-        }
-        else
-        {
-            screenClear = false;
-        }
 
-        if (currentHealth >= health)
+        if (notDead)
         {
-            currentHealth = health;
+            PlayerMoveDirection();
+            cC.SimpleMove(moveDirection * playerSpeed);
+            if (Input.GetButton("Fire1"))
+                {
+                shoot = true;
+                }
+                else
+                {
+                shoot = false;
+                }
+                if (Input.GetButton("Fire2"))
+                {
+                screenClear = true;
+                }
+                else
+                {
+                screenClear = false;
+                }
+
+                if (currentHealth >= health)
+                {
+                currentHealth = health;
+                }
+
         }
+   
 
         if (shoot)
         {
