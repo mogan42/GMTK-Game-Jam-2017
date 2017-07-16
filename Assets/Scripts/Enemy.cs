@@ -26,6 +26,7 @@ public class Enemy : MonoBehaviour {
 
     private float YTransform;
     private PlayerController player;
+    public GameObject pObject;
     public float damageToplayerIfHit = 350f;
 
     public float health = 100f;
@@ -53,7 +54,9 @@ public class Enemy : MonoBehaviour {
     public bool iskyun;
     public float kyunsYPoss = 2.29f;
     private float ranRange;
-   
+    //is Gar Chan
+    public bool isGarChan;
+    public float chanYPos = 1.33f;
 
 	// Use this for initialization
 	void Start () {
@@ -64,6 +67,7 @@ public class Enemy : MonoBehaviour {
         col = GetComponent<Collider>();
         aSource = GetComponent<AudioSource>();
         basic = GetComponent<BasicEnemyMovment>();
+        pObject = GameObject.Find("Character/Bike");
 
         if (isOsu)
         {
@@ -74,6 +78,10 @@ public class Enemy : MonoBehaviour {
         {
             YTransform = kyunsYPoss;
            ranRange = Random.Range(-1,1);
+        }
+        if (isGarChan)
+        {
+            YTransform = chanYPos;
         }
 
         aSource.pitch = Random.Range(randomRange.x, randomRange.y);
@@ -116,6 +124,14 @@ public class Enemy : MonoBehaviour {
                 rb.rotation = Quaternion.Euler(0.0f, 0.0f, rb.velocity.x * -tilt);
             }
 
+        }
+        if (isGarChan)
+        {
+            transform.LookAt(pObject.transform.position);
+            rb.velocity = transform.forward * basic.speed;
+            rb.position = new Vector3
+            (Mathf.Clamp(rb.position.x, bounds.xMin, bounds.xMax), YTransform, Mathf.Clamp(rb.position.z, bounds.zMin, bounds.zMax));
+            rb.rotation = Quaternion.Euler(0.0f, 0.0f, rb.velocity.x * -tilt);
         }
 
 
