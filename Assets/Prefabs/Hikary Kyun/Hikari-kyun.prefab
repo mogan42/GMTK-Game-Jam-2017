@@ -3029,6 +3029,7 @@ MonoBehaviour:
   aSource2: {fileID: 82236318058190922}
   explosionSound: {fileID: 8300000, guid: 769afbafc61a8b147bed4f9107e9ce79, type: 3}
   hitSound: {fileID: 8300000, guid: c1ea539ba44cf7f4183f9dca3211c3bf, type: 3}
+  randomRange: {x: -1, y: 1}
   basic: {fileID: 0}
   isOsu: 0
   osuYPoss: -4.3

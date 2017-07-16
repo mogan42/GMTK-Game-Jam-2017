@@ -25,6 +25,8 @@ public class Enemy : MonoBehaviour {
     public Boundary bounds;
 
     private float YTransform;
+    private PlayerController player;
+    public float damageToplayerIfHit = 350f;
 
     public float health = 100f;
     private ScoreKeeper score;
@@ -39,6 +41,7 @@ public class Enemy : MonoBehaviour {
     public AudioSource aSource2;
     public AudioClip explosionSound;
     public AudioClip hitSound;
+    public Vector2 randomRange;
 
     public BasicEnemyMovment basic;
 
@@ -72,6 +75,8 @@ public class Enemy : MonoBehaviour {
             YTransform = kyunsYPoss;
            ranRange = Random.Range(-1,1);
         }
+
+        aSource.pitch = Random.Range(randomRange.x, randomRange.y);
 
 
 	}
@@ -125,6 +130,7 @@ public class Enemy : MonoBehaviour {
                 score.score = score.score + scoreToGive;
                 enemy.enemyShoot = false;
                 explosion.SetActive(true);
+                gameObject.tag = "Untagged";
                 col.isTrigger = true;
                 aSource.PlayOneShot(explosionSound, 0.3f);
                 deadAlready = true;
@@ -143,6 +149,16 @@ public class Enemy : MonoBehaviour {
             yield return new WaitForSeconds(Random.Range (maneuvertime.x, maneuvertime.y));
             targetManover = 0;
             yield return new WaitForSeconds (Random.Range (maneuverwait.x, maneuverwait.y));
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            player = collision.gameObject.GetComponent<PlayerController>();
+            player.currentHealth = player.currentHealth - damageToplayerIfHit;
+            health = health - health * 2;
         }
     }
 
