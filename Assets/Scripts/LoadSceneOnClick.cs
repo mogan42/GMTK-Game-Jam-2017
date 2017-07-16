@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 using UnityEngine.SceneManagement;
 
@@ -9,6 +10,7 @@ public class LoadSceneOnClick : MonoBehaviour
     public string sceneName;
     public GameObject canvas;
     public List<GameObject> menuObjects = new List<GameObject>();
+    public GameObject loadScreen;
 
     public void LoadByIndex()
     {
@@ -20,13 +22,15 @@ public class LoadSceneOnClick : MonoBehaviour
     public void Settings()
     {
         menuObjects[0].SetActive(true);
-        
+
+
     }
 
     public void Back()
     {
         menuObjects[0].SetActive(false);
-        
+
+
     }
     public void Quit()
     {
@@ -38,8 +42,9 @@ public class LoadSceneOnClick : MonoBehaviour
     }
     IEnumerator LoadingScene()
     {
+        loadScreen.SetActive(true); 
         yield return new WaitForSeconds(2f);
-        
+
         SceneManager.LoadScene(sceneName);
     }
 

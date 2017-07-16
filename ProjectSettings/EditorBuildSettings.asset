@@ -6,5 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Ufotable_presents_OurStartScreen.unity
+    guid: 339df61e86154c5439340b780fd457d6
+  - enabled: 1
     path: Assets/Scenes/Morgans.unity
     guid: 10ef71abe94453b44bac2ffca26cb6c9

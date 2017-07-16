@@ -46,7 +46,7 @@ public class DamageEnemys : MonoBehaviour {
         }
         if (isScreenClear == true)
         {
-            if (other.gameObject.tag == "Bullet")
+            if (other.gameObject.tag == "EnemyBullet")
             {
                 Destroy(other.gameObject);
             }
