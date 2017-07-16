@@ -57,6 +57,13 @@ public class Enemy : MonoBehaviour {
     //is Gar Chan
     public bool isGarChan;
     public float chanYPos = 1.33f;
+    // is Boss Shin Chon
+    public bool isBoss;
+    public bool inRange = false;
+    public float bossChonYPoss = 3.76f;
+    private bool movingRight = false;
+    public Transform rayPoint;
+    public float ditectionRange;
 
 	// Use this for initialization
 	void Start () {
@@ -83,6 +90,11 @@ public class Enemy : MonoBehaviour {
         {
             YTransform = chanYPos;
         }
+        if (isBoss)
+        {
+            YTransform = bossChonYPoss;
+
+        }
 
         aSource.pitch = Random.Range(randomRange.x, randomRange.y);
 
@@ -90,11 +102,7 @@ public class Enemy : MonoBehaviour {
 	}
     private void Update()
     {
-        //if (beenHit)
-        //{
-        //    aSource2.PlayOneShot(hitSound, 0.5f);
-        //    beenHit = false;
-        //}
+
     }
 
     void FixedUpdate () {
@@ -133,6 +141,36 @@ public class Enemy : MonoBehaviour {
             (Mathf.Clamp(rb.position.x, bounds.xMin, bounds.xMax), YTransform, Mathf.Clamp(rb.position.z, bounds.zMin, bounds.zMax));
             rb.rotation = Quaternion.Euler(0.0f, 0.0f, rb.velocity.x * -tilt);
         }
+        if (isBoss && !inRange)
+        {
+
+            //RaycastHit hit;
+            //if (Physics.Raycast(rayPoint.position, pObject.transform.position,out hit, ditectionRange))
+            //{
+            //    Debug.Log(hit.transform.name);
+            //    if (hit.collider.tag == "player")
+            //    {
+            //        Debug.Log("found player");
+            //        inRange = true;
+            //    }
+            //}
+
+            if (!inRange)
+            {
+                //rb.velocity = transform.forward * basic.speed;
+                //transform.Translate(   0,0, Time.deltaTime * basic.speed);
+                rb.MovePosition(transform.position + transform.forward * Time.deltaTime * basic.speed);
+            }
+            else if (inRange)
+            {
+                
+                rb.velocity = transform.right * basic.speed;
+                movingRight = true;
+            }
+        }
+   
+
+
 
 
         if (health <= 0f)
@@ -176,6 +214,21 @@ public class Enemy : MonoBehaviour {
             player.currentHealth = player.currentHealth - damageToplayerIfHit;
             health = health - health * 2;
         }
+        if (isBoss)
+        {
+            if (collision.gameObject.tag == "Boundry" && movingRight)
+            {
+                rb.velocity = -transform.right * basic.speed;
+                movingRight = false;
+            }
+            if (collision.gameObject.tag == "Boundry" && !movingRight)
+            {
+                rb.velocity = transform.right * basic.speed;
+                movingRight = true;
+            }
+        }
+
+
     }
 
 }

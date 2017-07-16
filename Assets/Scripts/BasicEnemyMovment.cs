@@ -22,13 +22,21 @@ public class BasicEnemyMovment : MonoBehaviour{
 
     public bool enemyShoot = true;
 
+    private Enemy enemy;
+
 
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        rb.velocity = transform.forward * speed;
+        enemy = GetComponent<Enemy>();
         bulletPrefab = pickBullets[Random.Range (0,pickBullets.Length)];
-        StartCoroutine(ChangeAmmo());
+
+        if (!enemy.isBoss)
+        {
+            rb.velocity = transform.forward * speed;
+            StartCoroutine(ChangeAmmo());
+        }
+
 
     }
 
