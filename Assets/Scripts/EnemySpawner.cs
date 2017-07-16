@@ -14,6 +14,7 @@ public class EnemySpawner : MonoBehaviour {
     public float timerTarget;
 	// Use this for initialization
 	void Start () {
+
         StartCoroutine(SpawnWave());
 	}
 	
@@ -35,7 +36,7 @@ public class EnemySpawner : MonoBehaviour {
             for (int i = 0; i < noOfEnemies; i++)
             {
                 GameObject enemy = enemys[Random.Range(0, enemys.Length)];
-                Vector3 spawnPosition = new Vector3(Random.Range(-enemySpawnLocations.x, enemySpawnLocations.x), enemySpawnLocations.z, enemySpawnLocations.z);
+                Vector3 spawnPosition = new Vector3(Random.Range(-enemySpawnLocations.x, enemySpawnLocations.x), enemySpawnLocations.y, enemySpawnLocations.z);
                 Quaternion spawnRotation = Quaternion.identity;
                 Instantiate(enemy, spawnPosition, spawnRotation);
                 yield return new WaitForSeconds(spawnWait);

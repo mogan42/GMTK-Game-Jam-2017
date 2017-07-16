@@ -2080,6 +2080,16 @@ Prefab:
       propertyPath: looping
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 198139832245696226, guid: 568c97a2b47fb3d4882043b99ba6a7c9,
+        type: 2}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198071337015921348, guid: 568c97a2b47fb3d4882043b99ba6a7c9,
+        type: 2}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 568c97a2b47fb3d4882043b99ba6a7c9, type: 2}
   m_IsPrefabParent: 0
@@ -7254,6 +7264,7 @@ MonoBehaviour:
   shoot: 0
   timeBetweenShots: 0.001
   bulletSpeed: 100
+  screenClearSpeed: 20
   firePoint: {fileID: 1079047819}
   bulletPrefab: {fileID: 1962995508182914, guid: 35f12998dfa3f934e991491315d25975,
     type: 2}
@@ -7273,6 +7284,7 @@ MonoBehaviour:
   dissable:
   - {fileID: 765903839}
   - {fileID: 904951847}
+  col: {fileID: 0}
   explosion: {fileID: 329170716}
 --- !u!143 &1202718090
 CharacterController:
@@ -12549,7 +12561,7 @@ MonoBehaviour:
   - {fileID: 1795346568429692, guid: 2540eec1802245745b56c7e7c0827201, type: 2}
   - {fileID: 1795346568429692, guid: 2540eec1802245745b56c7e7c0827201, type: 2}
   - {fileID: 1067509957722016, guid: ec3cc740ad7882746bc3b179bdf3f4dc, type: 2}
-  enemySpawnLocations: {x: 12, y: 10, z: -1}
+  enemySpawnLocations: {x: 12, y: 2.29, z: -1}
   noOfEnemies: 3
   spawnWait: 0.5
   startWait: 1

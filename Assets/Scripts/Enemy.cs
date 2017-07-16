@@ -48,7 +48,7 @@ public class Enemy : MonoBehaviour {
 
     //is hikari kyun
     public bool iskyun;
-    public float kyunsYPoss = 10f;
+    public float kyunsYPoss = 2.29f;
     private float ranRange;
    
 
@@ -77,12 +77,11 @@ public class Enemy : MonoBehaviour {
 	}
     private void Update()
     {
-        Debug.Log(ranRange);
-        if (beenHit)
-        {
-            aSource2.PlayOneShot(hitSound, 0.5f);
-            beenHit = false;
-        }
+        //if (beenHit)
+        //{
+        //    aSource2.PlayOneShot(hitSound, 0.5f);
+        //    beenHit = false;
+        //}
     }
 
     void FixedUpdate () {
@@ -100,10 +99,16 @@ public class Enemy : MonoBehaviour {
             if (ranRange == 0)
             {
                 rb.velocity = transform.right * basic.speed + transform.forward * basic.speed;
+                rb.position = new Vector3
+                      (Mathf.Clamp(rb.position.x, bounds.xMin, bounds.xMax), YTransform, Mathf.Clamp(rb.position.z, bounds.zMin, bounds.zMax));
+                rb.rotation = Quaternion.Euler(0.0f, 0.0f, rb.velocity.x * -tilt);
             }
-            else if (ranRange >= 0)
+            else if (ranRange <= 0)
             {
                 rb.velocity = -transform.right * basic.speed + transform.forward * basic.speed;
+                rb.position = new Vector3
+                (Mathf.Clamp(rb.position.x, bounds.xMin, bounds.xMax), YTransform, Mathf.Clamp(rb.position.z, bounds.zMin, bounds.zMax));
+                rb.rotation = Quaternion.Euler(0.0f, 0.0f, rb.velocity.x * -tilt);
             }
 
         }

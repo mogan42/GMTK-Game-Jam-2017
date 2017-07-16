@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour {
     float shotcounter;
     public float timeBetweenShots;
     public float bulletSpeed;
+    public float screenClearSpeed;
     public GameObject firePoint;
     public GameObject bulletPrefab;
     //Shooting2
@@ -44,12 +45,14 @@ public class PlayerController : MonoBehaviour {
     public bool gotEnergy = false;
     public bool beenhit = false;
     public GameObject[] dissable;
+    public MeshCollider col;
     public GameObject explosion;
 
     // Use this for initialization
     void Start () {
         cC = GetComponent<CharacterController>();
         aSource = GetComponent<AudioSource>();
+        col = GetComponent<MeshCollider>();
         currentHealth = health;
 	}
 	
@@ -100,8 +103,11 @@ public class PlayerController : MonoBehaviour {
         {
             if (!deadalready)
             {
-            aSource.PlayOneShot(explode, 0.3f);
+                aSource.PlayOneShot(explode, 0.3f);
                 explosion.SetActive(true);
+                gameObject.tag = "Untagged";
+                col.convex = true;
+                col.isTrigger = true;
                 foreach (GameObject rend in dissable)
                 {
                     rend.SetActive(false);
@@ -136,7 +142,7 @@ public class PlayerController : MonoBehaviour {
             {
                 shotcounter2 = timeBetweenShots2;
                 var bullet = Instantiate(screenClearBulletPrefab, firePoint.transform.position, firePoint.transform.rotation);
-                bullet.GetComponent<Rigidbody>().AddForce(transform.right * bulletSpeed, ForceMode.Impulse);
+                bullet.GetComponent<Rigidbody>().AddForce(transform.right * screenClearSpeed, ForceMode.Impulse);
                 currentHealth = currentHealth - screenClearBulletsCost;
                 Destroy(bullet, 5);
             }

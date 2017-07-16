@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Ufotable_presents_OurStartScreen.unity
+- path: Assets/Scenes/Morgans.unity
   isLoaded: 1
   isActive: 1

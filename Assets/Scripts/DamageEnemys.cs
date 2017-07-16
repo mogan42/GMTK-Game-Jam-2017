@@ -7,7 +7,7 @@ public class DamageEnemys : MonoBehaviour {
     public float healthToTake;
     private Enemy cHealth;
     public bool isScreenClear;
-    private float lifeTime = 200f;
+    public float lifeTime = 200f;
     private AudioSource aSource;
     public Vector2 pitchRange;
     // Use this for initialization
